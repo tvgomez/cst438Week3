@@ -1,7 +1,5 @@
 package cst438.domain;
 
-
-
 public class TempAndTime {
 	
 	private double temp;

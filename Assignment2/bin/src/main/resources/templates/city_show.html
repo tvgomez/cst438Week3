@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th= "www.thymeleaf.org">
+<head>
+<title>City</title>
+</head>
+<body>
+	<h2 th:inline="text">City</h2>
+	ID: <span th:inline= "text"> [[${city.id}]]</span><br />
+	Name: <span th:inline= "text"> [[${city.name}]]</span><br />
+	Country Code: <span th:inline= "text"> [[${city.countryCode}]]</span><br />
+	Country Name: <span th:inline= "text"> [[${city.countryName}]]</span><br />
+	District: <span th:inline= "text"> [[${city.district}]]</span><br />
+	Population: <span th:inline= "text"> [[${city.population}]]</span><br />
+	Local Weather: <span th:inline= "text"> [[${city.temp}]]</span><br />
+	Local Time: <span th:inline= "text"> [[${city.time}]]</span><br />
+	
+	<br/>
+	
+	For a fabulous weekend get away for 2 to <span th:inline= "text"> [[${city.name}]]</span> sign up here.
+	<br/>
+	<form action = "/cities/reservation" method = "post">
+	
+
+		Email <input type = "text" name ="email"><br />
+		<input type ="hidden" th:name = "city" th:value = "${city.name}">
+		<input type ="radio" name = "level" value = "Luxury">
+		<label for ="lux"> Luxury $1000</label><br />
+		<input type ="radio" name = "level" value = "Moderate">
+		<label for ="mod"> Very Good $500</label><br />
+		<input type ="radio" name= "level"  value = "Budget">
+		<label for ="budget"> Good $350</label><br />	
+		<input type = "submit" value="Submit" />	
+	</form>
+	
+	
+</body>
+</html>

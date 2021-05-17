@@ -1,13 +1,10 @@
 package cst438.services;
 
-
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +41,7 @@ public class CityService {
 			cityWeather.setTemp(tempF);
 			Date t = new Date();
 			long localTime = t.getTime();
+			@SuppressWarnings("deprecation")
 			long localOff= t.getTimezoneOffset()*60000;
 			long utc = localTime + localOff;
 			long cityOff = utc+(1000*cityWeather.getTimezone());

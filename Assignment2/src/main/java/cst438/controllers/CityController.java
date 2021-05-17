@@ -7,12 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import cst438.domain.CityInfo;
 import cst438.services.CityService;
-
-
-
 
 @Controller
 public class CityController {
